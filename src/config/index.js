@@ -12,5 +12,5 @@ export default {
         iconWidth: 30
     },
     // baseUrl: 'https://instaapi-8u510h.turbo360-vertex.com/api/'
-    baseUrl: 'http://localhost:3000/api'
+    baseUrl: 'http://localhost:3000/api/'
 };
