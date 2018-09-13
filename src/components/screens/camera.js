@@ -29,30 +29,28 @@ export default class CameraComponent extends React.Component {
 
       const turbo = Turbo({ site_id: '5b828c369dbe760014a697e4' });
       const apiKey = '40218513-e2de-4579-a1d4-17af0d966952';
-      const cdnResp;
 
-      const cdnFetch = await turbo.uploadFile({
+      const cdnResp = await turbo.uploadFile({
         uri: photo.uri,
         name: 'camera_pic',
         type: 'image/jpeg'
       }, apiKey)
         .then(response => {
-          cdnResp = response;
           console.log(response);
         })
         .catch(err => {
           console.log(err);
         });
 
-      const resp = await
-        fetch(config.baseUrl, + 'users/' + this.state.userId + '/photo', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ imageUrl: cdnResp.result.url })
-        })
+      // const resp = await
+      //   fetch(config.baseUrl, + 'users/' + this.state.userId + '/photo', {
+      //     method: 'POST',
+      //     headers: {
+      //       Accept: 'application/json',
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify({ imageUrl: cdnResp.result.url })
+      //   })
 
     }
   };
